@@ -48,22 +48,12 @@ function publishMessage(topic, message) {
 publishMessage('esp8266-master/sub', '{"relay_1":0}')
 
 const app = express()
-const port = 3001
+const port = 4000
 
 /*
 Cấu hình CORS policy
  */
-app.use(cors(
-    {
-        origin: [
-            "http://localhost:3000",
-            "http://127.0.0.1:3000",
-        ],
-        // origin: '*',
-        credentials: true,
-        exposedHeaders: ["set-cookie"]
-    }
-));
+app.use(cors());
 
 /*
 Cấu hình body parser
